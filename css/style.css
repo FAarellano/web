@@ -1,0 +1,91 @@
+.titulo-article-superior{
+    margin: 10px;
+    text-align: justify;
+    font-size: 2.8ch;
+    text-shadow: 1px 1px 1px black;
+}
+.texto-article-superior{
+    margin: 10px;
+    text-align: justify;
+    font-size: 1.8ch;  
+}
+.cita{
+    padding-top: 10px;
+    text-align: center;
+    font-size: 1.6ch; 
+    font-style: italic; 
+}
+
+
+#titulo{
+    padding-top: 20px;
+    font-family: geogia;
+    text-align: center;
+    text-shadow: 1px 1px 0 blanchedalmond;
+}
+input[type="email"],input[type="password"]{
+    margin-bottom: 5px;
+    font-family: monospace;
+    width: 150px;
+    height: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 2px 0 black;
+
+}
+input[type="submit"]{
+    margin-top: 10px;
+    font-family: monospace;
+    border-radius: 5px;
+    box-shadow: 4px 2px 0 black;
+}
+input[type="submit"]:active{
+    box-shadow: 2px 1px 0 black;
+}
+
+.an1:hover{
+    transition: 0.2s;
+    font-size: 2.3ch;
+    position: relative;
+}
+.an2:hover{
+    transition: 0.2s;
+    font-size: 2.3ch;
+    position: relative;
+}
+.an3:hover{
+    transition: 0.2s;
+    font-size: 2.3ch;
+    position: relative;
+}.an4:hover{
+    transition: 0.2s;
+    font-size: 2.3ch;
+    position: relative;
+}.an5:hover{
+    transition: 0.2s;
+    font-size: 2.3ch;
+    position: relative;
+}
+.ig{
+    margin-left: 200px;
+    margin-top: 10px;
+    width:1.5%;
+    position: absolute;
+}
+.x{
+    margin-left: -200px;
+    margin-top: 10px;
+    width:1.5%;
+    position: absolute;
+}
+.ig:hover{
+    width: 2%;
+    transition: 0.2s;
+}
+.x:hover{
+    width: 2%;
+    transition: 0.2s;
+}
+.derechos{
+    margin-top:50px ;
+}
