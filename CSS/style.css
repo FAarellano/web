@@ -1,0 +1,32 @@
+body{
+    background-image: url("https://images.pexels.com/photos/19287246/pexels-photo-19287246/free-photo-of-blanco-y-negro-montanas-panorama-urbano-skyline.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#titulo_logo{
+    margin-top: 5px;
+    text-align: center;
+    color:darkblue;
+    font-size: 2ch;
+    font-weight: bold;
+    font-family: lucida sans;
+}
+.Seleccion{
+    margin-top: 5%;
+}
+#titulo_seleccion{
+    margin-top: 5%;
+    text-align: center;
+    font-size: 5ch;
+    color: azure;
+    text-shadow: 1px 1px 2px black;
+}
+
+#recuperar{
+    margin-top: 4%;
+}
+
+#boton{
+    margin-top: 5%;
+}
