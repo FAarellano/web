@@ -1,0 +1,69 @@
+body{
+    background-image: url("https://images.pexels.com/photos/19287246/pexels-photo-19287246/free-photo-of-blanco-y-negro-montanas-panorama-urbano-skyline.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#titulo_logo{
+    margin-top: 5px;
+    text-align: center;
+    color:red;
+    text-shadow: 1px 1px 1px black;
+    font-size: 2.2ch;
+    font-weight: bold;
+    font-family: lucida sans;
+}
+#titulo_seleccion{
+    margin-top: 5%;
+    text-align: center;
+    font-size: 6ch;
+    color: azure;
+    text-shadow: 1px 1px 2px black;
+}
+#login{
+    margin-top: 1%;
+}
+#usuario{
+    margin-top: 2%;
+    margin-bottom: 1%;
+    border-radius: 7px;
+    font-family: lucida Sans;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-left: 10px;
+    box-shadow: 3px 5px 3px black;
+}
+#contraseña{
+    border-radius: 7px;
+    font-family: lucida Sans;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-left: 10px;
+    box-shadow: 3px 5px 3px black;
+}
+#usuario:hover{
+    font-size: 2ch;
+    transition-duration: 0.5s;
+}
+#contraseña:hover{
+    font-size: 2ch;
+    transition-duration: 0.5s;
+}
+
+#recuperar{
+    box-shadow: 2px 2px 2px black;
+    margin-top: 2%;
+}
+
+#enviar{
+    margin-top: 1%;
+    box-shadow: 2px 2px 2px black;
+}
+#enviar:hover{
+    box-shadow: 4px 3px 4px black;
+    transition-duration: 0.15s;
+}
+#recuperar:hover{
+    box-shadow: 3px 3px 3px black;
+    transition-duration: 0.15s;
+}
