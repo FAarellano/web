@@ -1,0 +1,165 @@
+body{
+    background-image: url("https://images.pexels.com/photos/19287246/pexels-photo-19287246/free-photo-of-blanco-y-negro-montanas-panorama-urbano-skyline.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#logo{
+    padding-left: 10px;
+    font-size: 110%;
+}
+#cerrar{
+    margin-left: 20px;
+    padding-right: 10px;
+    margin-right: 15px;
+}
+#volver{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 7px;
+    margin-left: 7px;
+}
+#check{
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 7px;
+    margin-right: 7px;
+    background-color: grey;
+    border-radius: 10px;
+    color:whitesmoke;
+}
+#check:hover{
+    transition-duration: 0.5s;
+
+    color:orange;
+    text-shadow: 1px 2px 1px black;
+}
+#title_navbar{
+    margin-top: 8px;
+    margin-left: 7px;
+    color: whitesmoke;
+    opacity: 85%;
+}
+#titulo_logo{
+    margin-top: 5px;
+    text-align: center;
+    color:red;
+    text-shadow: 1px 1px 1px black;
+    font-size: 2ch;
+    font-weight: bold;
+    font-family: lucida sans;
+}
+#titulo_seleccion{
+    text-align: center;
+    font-size: 4.5ch;
+    color: azure;
+    text-shadow: 1px 1px 2px black;
+}
+.inputs{
+    padding-left: 10px;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.selects{
+    margin-left: 10px;
+    margin-top: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#color{
+    background-color: darkgray;
+}
+
+.card-form .form-control {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.card-form .form-control, .card-form .btn {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    margin-top: 25px !important;
+    margin: auto;
+    border: 1.9px solid #212529;
+
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card .form-floating label {
+    color: #495057;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+responsive-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+responsive-table th, responsive-table td {
+    padding: 8px;
+    text-align: left;
+    border-top: 1px solid #ddd;
+}
+
+responsive-table th {
+    background-color: #ffedd7;
+}
+
+responsive-table tbody tr:nth-child(even) {
+    background-color: #ffedd7;
+
+}
+
+
+
+@media (max-width: 767px) {
+.responsive-table thead {
+    display: none; /* Oculta los encabezados en dispositivos móviles */
+}
+
+responsive-table tr {
+    margin-bottom: 0.625em;
+    display: block;
+    border-bottom: 2px solid #ddd;
+}
+
+responsive-table td {
+   display: block;
+   text-align: right;
+   position: relative;
+   padding-left: 50%;
+}
+
+responsive-table td::before {
+   content: attr(data-label);
+   position: absolute;
+   left: 0;
+   width: 50%;
+   padding-left: 15px;
+   font-weight: bold;
+   text-align: left;
+}
+}
+
+
+
+
+
+
