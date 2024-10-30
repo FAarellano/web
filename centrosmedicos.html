@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centros Médicos - Santiago</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <link rel="stylesheet" href="style/style2.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="header">
+                <a href="index.html"><button class="btn">REGRESAR</button></a>
+                <h1>Centros Médicos</h1>
+                <p>Santiago, Región Metropolitana</p>
+            </div>
+            <input type="text" class="search-box" placeholder="Buscar centro médico...">
+            <ul class="center-list" id="centerList">
+                <!-- Los centros médicos se agregarán aquí dinámicamente -->
+            </ul>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script>
+        // Datos de centros médicos
+        const medicalCenters = [
+    {
+        "name": "Hospital Clínico Universidad de Chile",
+        "address": "Santos Dumont 999, Independencia",
+        "coords": [-33.4199, -70.6503]
+    },
+    {
+        "name": "Clínica Las Condes",
+        "address": "Estoril 450, Las Condes",
+        "coords": [-33.3879, -70.5352]
+    },
+    {
+        "name": "Hospital del Salvador",
+        "address": "Av. Salvador 364, Providencia",
+        "coords": [-33.4352, -70.6264]
+    },
+    {
+        "name": "Clínica Santa María",
+        "address": "Av. Santa María 0500, Providencia",
+        "coords": [-33.4236, -70.6264]
+    },
+    {
+        "name": "Hospital San José",
+        "address": "San José 1196, Independencia",
+        "coords": [-33.4169, -70.6503]
+    },
+    {
+        "name": "Hospital Sótero del Río",
+        "address": "Av. Concha y Toro 3459, Puente Alto",
+        "coords": [-33.5741, -70.5858]
+    },
+    {
+        "name": "Hospital San Juan de Dios",
+        "address": "Huérfanos 3255, Santiago",
+        "coords": [-33.4422, -70.6827]
+    },
+    {
+        "name": "Hospital Barros Luco",
+        "address": "Gran Avenida José Miguel Carrera 3204, San Miguel",
+        "coords": [-33.4997, -70.6548]
+    },
+    {
+        "name": "Hospital Luis Calvo Mackenna",
+        "address": "Antonio Varas 360, Providencia",
+        "coords": [-33.4408, -70.6197]
+    },
+    {
+        "name": "Hospital Militar de Santiago",
+        "address": "Av. Larraín 9100, La Reina",
+        "coords": [-33.4394, -70.5355]
+    },
+    {
+        "name": "Clínica Alemana",
+        "address": "Av. Vitacura 5951, Vitacura",
+        "coords": [-33.3894, -70.5784]
+    },
+    {
+        "name": "Hospital de Carabineros",
+        "address": "Simón Bolívar 2200, Ñuñoa",
+        "coords": [-33.4558, -70.5984]
+    },
+    {
+        "name": "Hospital Padre Hurtado",
+        "address": "Esperanza 2150, San Ramón",
+        "coords": [-33.5415, -70.6664]
+    },
+    {
+        "name": "Hospital El Carmen Dr. Luis Valentín Ferrada",
+        "address": "Camino a Rinconada 1201, Maipú",
+        "coords": [-33.5091, -70.7580]
+    },
+    {
+        "name": "Hospital de Urgencia Asistencia Pública (Ex Posta Central)",
+        "address": "Portugal 125, Santiago",
+        "coords": [-33.4503, -70.6376]
+    },
+    {
+        "name": "Hospital El Pino",
+        "address": "Av. Padre Hurtado 13560, San Bernardo",
+        "coords": [-33.58447733241781, -70.67670641654854]
+    }
+]
+
+
+        // Inicializar el mapa
+        const map = L.map('map').setView([-33.4489, -70.6693], 12);
+
+        // Agregar capa de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Función para agregar marcadores y lista de centros
+        function initializeCenters() {
+            const centerList = document.getElementById('centerList');
+            
+            medicalCenters.forEach(center => {
+                // Crear marcador en el mapa
+                const marker = L.marker(center.coords)
+                    .bindPopup(`
+                        <strong>${center.name}</strong><br>
+                        ${center.address}
+                    `)
+                    .addTo(map);
+
+                // Crear elemento en la lista
+                const li = document.createElement('li');
+                li.className = 'center-item';
+                li.innerHTML = `
+                    <div class="center-name">${center.name}</div>
+                    <div class="center-address">${center.address}</div>
+                `;
+
+                // Agregar evento click para centrar el mapa
+                li.addEventListener('click', () => {
+                    map.setView(center.coords, 15);
+                    marker.openPopup();
+                });
+
+                centerList.appendChild(li);
+            });
+        }
+
+        // Implementar búsqueda
+        function initializeSearch() {
+            const searchBox = document.querySelector('.search-box');
+            searchBox.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const centerItems = document.querySelectorAll('.center-item');
+
+                centerItems.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    item.style.display = text.includes(searchTerm) ? 'block' : 'none';
+                });
+            });
+        }
+
+        // Inicializar la aplicación
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeCenters();
+            initializeSearch();
+        });
+    </script>
+</body>
+</html>
